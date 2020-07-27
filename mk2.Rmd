@@ -455,9 +455,9 @@ modsum_5 %>% pivot_longer(cols = c(coherence,prevalence)) %>%
        x = "Topics", y = "Value")
 ```
 
-From the graph above we know that `topic 7` has the highest quality, means the words in that topic are associated to each other. But in the terms of probability of topics distribution in the whole documents (prevalence), `topic 7` has a low score. Mean the review are unlikely using combination of words in `topic 7` even tough the words inside that topic are supporting each other.    
+From the graph above we know that `topic 10` has the highest quality, means the words in that topic are associated to each other. But in the terms of probability of topics distribution in the whole documents (prevalence), `topic 10` has a low score. Mean the review are unlikely using combination of words in `topic 10` even tough the words inside that topic are supporting each other.    
 
-We can see if topics can be grouped together using `Dendogram`. A Dendogram uses [Hellinger distance](https://en.wikipedia.org/wiki/Hellinger_distance) (distance between 2 probability vectors) to decide if the topics are closely related. For instance, the Dendogram below suggests that there are greater similarity between topic 1 and 4.
+We can see if topics can be grouped together using `Dendogram`. A Dendogram uses [Hellinger distance](https://en.wikipedia.org/wiki/Hellinger_distance) (distance between 2 probability vectors) to decide if the topics are closely related. For instance, the Dendogram below suggests that there are greater similarity between topic 10 and 13.
 
 ```{r}
 mod_lda_5$linguistic <- CalcHellingerDist(mod_lda_5$phi)
@@ -776,7 +776,7 @@ modsum_5 %>%
   slice(1:5)
 ```
 
-Highest coherence score, `topic 7` contains lots of 'sticking' and 'tongue' words. Maybe its just a phrase for a specific instrument. It has similar words that make their coherence score rising but low prevalence means they are rarely used in other review, that's why i suggest its from 'specific' instrument. in `topic 8` and others people are talk about how good the product is, for example there are words like 'good', 'accurate', 'clean', 'easy', and 'great' that indicates positive sentiment. 
+Highest coherence score, `topic 10` and `topic 13` contains lots of 'sticking' and 'tongue' words. Maybe its just a phrase for a specific instrument. It has similar words that make their coherence score rising but low prevalence means they are rarely used in other review, that's why i suggest its from 'specific' instrument. in `topic 11` and others people are talk about how good the product is, for example there are words like 'good', 'accurate', 'clean', 'easy', 'recommend', and 'great' that indicates positive sentiment. 
 
 ## Rating 4
 ```{r}
@@ -785,7 +785,7 @@ modsum_4 %>%
   slice(1:5)
 ```
 
-Same like before, topic with highest coherence score is filled with sticking and tongue stuff. In this rating people are still praising the product but not as much as rating 5. Keep in mind, the dtm are builded using bigrams, words with 2 words like mic_stand or e_tongue are captured and calculated just like single word does. With that information we know that all words showed here have their own phi value and actually represent the review.
+Same like before, topic with highest coherence score is filled with sticking and tongue stuff. In this rating people are still praising the product but not as much as rating 5. Keep in mind, the dtm are builded using bigrams, words with 2 words like solid_state or e_tongue are captured and calculated just like single word does. With that information we know that all words showed here have their own phi value and actually represent the review.
 
 ## Rating 3
 ```{r}
@@ -794,7 +794,7 @@ modsum_3 %>%
   slice(1:5)
 ```
 
-Looks like stick and tongue words are everywhere. `topic 2` has high coherence and prevalence value in rating 3, means lots of review in this rating are talk about them. in the other hand, in this rating the positive words are barely seen. most of the topics filled with guitar or string related words.
+Looks like stick and tongue words are everywhere. `topic 15` has high coherence and prevalence value in rating 3, means lots of review in this rating are talk about them. in the other hand, in this rating the positive words are barely seen. most of the topics filled with guitar or string related words.
 
 ## Rating 2
 ```{r}
@@ -803,7 +803,7 @@ modsum_2 %>%
   slice(1:5)
 ```
 
-In this rating people are complaining. words like 'hard', and 'better' maybe indicate negative sentiment. words like 'cheap' also suspicious. But in my opinion the model is kinda bad in this one. the lack of documents maybe affect the topic modeling tho
+In this rating people are complaining. words like 'big_muff', and 'fuzz' maybe indicate negative sentiment. words like 'cheap' also suspicious. But in my opinion the model is kinda bad in this one. the lack of documents maybe affect the topic modeling tho
 
 ## Rating 1
 ```{r}
@@ -812,10 +812,10 @@ modsum_1 %>%
   slice(1:5)
 ```
 
-In the worst rating people are highly complaint. words like 'low', 'noise' , 'issues', 'far', 'return' are everywhere. there's lot of difference compared with rating 5. 
+In the worst rating people are highly complaint. words like 'junk', 'cheap' , 'just', 'back' are everywhere. there's lot of difference compared with rating 5. 
 
 
-Overall lets keep in mind this dataset is a combination of product, so its obvious if the topic filled with nonsense. But for every rating we're able to build topics with different instrument. Most of them are talking about with particular instrument with its positive or negative review. In this project we managed to build topic model that separated by instrument, it shows LDA is able to build topic with its semantic words. It will be better if we do topic model with specific product only and discover the problems to remove or a goodness to keep. It surely help organization to understand better about their customer feedback's So that they can concentrate on those issues customer's are facing, especially for those wo have lots of review to analyze. 
+Overall lets keep in mind this dataset is a combination of product, so its obvious if the topic filled with nonsense. But for every rating we're able to build topics with different instrument. Most of them are talking about with particular instrument with its positive or negative review. In this project we managed to build topic model that separated by instrument, it shows LDA is able to build topic with its semantic words. It will be better if we do topic model with specific product only and discover the problems to remove or a goodness to keep. It surely help organization to understand better about their customer feedback's So that they can concentrate on those issues customer's are facing, especially for those who have lots of review to analyze. 
 
 
 # Reference
