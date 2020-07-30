@@ -36,6 +36,8 @@ Topic Modeling is how the machine collect group of words within a document to bu
 - Annotating documents according to these topics   
 - Using these annotations to organize, search and summarize texts   
 
+In a business approach, topic modeling power for discovering hidden topic can help the organization to understand better about their customer feedback's So that they can concentrate on those issues customer's are facing. It also can summarize text for company's meetings. A high-quality meeting document can enable users to recall the meeting content efficiently. Topic tracking and detection can also use to build recommender system.   
+
 There are many techniques that are used to obtain topic models, namely: Latent Dirichlet Allocation (LDA), Latent Semantic Analysis (LSA), Correlated Topic Models (CTM) and TextRank. In this study we will focus to implement LDA algorithm to build topic model with `tidytext` and `textmineR` package. Not only building model, we will also evaluate the goodness of fit of the model using some metrics like R-squared or log-likelihood. There's also some metrics like `coherence` and `prevalence` to measure the quality of topics.
 
 ## Libraries
@@ -824,6 +826,7 @@ Overall lets keep in mind this dataset is a combination of product, so its obvio
 - [Topic model with tidytext](https://www.tidytextmining.com/topicmodeling.html#latent-dirichlet-allocation)   
 - [Topic model evaluation](https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d0)   
 - [Youtube: Latent Dirichlet Allocation](https://www.youtube.com/watch?v=DWJYZq_fQ2A)   
+- [Industrial applications of topic model](https://medium.com/@fatmafatma/industrial-applications-of-topic-model-100e48a15ce4)
 
 
 
